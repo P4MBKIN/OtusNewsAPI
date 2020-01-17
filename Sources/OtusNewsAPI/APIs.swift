@@ -11,7 +11,7 @@ open class OpenAPIClientAPI {
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = [:]
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
-    public static var apiResponseQueue: DispatchQueue = .main
+    public static var apiResponseQueue: DispatchQueue = .global(qos: .default)
 }
 
 open class RequestBuilder<T> {
